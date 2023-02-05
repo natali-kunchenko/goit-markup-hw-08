@@ -1,0 +1,182 @@
+.modal {
+        position: absolute;
+        top: 93px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        max-width: 450px;
+        padding: 40px;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    
+        @media screen and (min-width:768px) {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        @media screen and (min-width:1200px) {
+            max-width: 528px;
+            transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
+        }
+        @media screen and (max-width:1199px) {
+            overflow: scroll;
+        }   
+
+    &__close-button {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 8px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #fff;
+        cursor: pointer;
+    }
+    &__title {
+        margin-bottom: 12px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: $color-main;
+
+        @media screen and(min-width:1200px) {
+            line-height: 1.15;
+        }
+    }
+    &__form-label {
+        margin: 0;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.1666;
+        letter-spacing: 0.01em;
+        color: $color-p;
+    }
+    &__form-field {
+        position: relative;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+    &__form-input {
+        height: 40px;
+        width: 100%;
+        padding: 12px 16px 12px 42px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        outline: none;
+    }
+    &__form-input:focus {
+        border-color: $color-hover;
+    }
+    &__form-input:focus + .modal__form-icon{
+        fill: $color-hover
+    }
+    &__form-icon {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        fill: $color-main;
+    }
+    &__textarea-field {
+        margin-bottom: 20px;
+    }
+    &__textarea-input {
+        resize: none;
+        width: 100%;
+        height: 120px;
+        padding: 12px 16px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.1666;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+    }
+    &__textarea-input:focus {
+        color: $color-main;
+    }
+    &__form-checkbox {
+        display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: $color-p;
+
+    @media screen and (min-width:1200px) {
+        font-size: 14px;
+        line-height: 1.71;
+        }
+    }
+    &__checkbox-label {
+        position: relative;
+    }
+    &__checkbox {
+        margin-right: 12px;
+        margin-bottom: 0;
+        appearance: none;
+        height: 13.6px;
+        width: 14.6px;
+        border: 1.4px solid #000000;
+        border-radius: 2px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__checkbox:checked {
+        opacity: 1;
+    }
+    &__checkbox-icon {
+        position: absolute;
+        top: 3px;
+        left: 11px;
+        transform: translate(-50%);
+        width: 16px;
+        opacity: 0;
+        height: 15px;
+        border-radius: 2px;
+        fill: $color-hero;
+
+        @media screen and (min-width:1200px) {
+            top: 4px;
+        }
+    }
+    .modal__checkbox:checked + &__checkbox-icon{
+        opacity: 1;
+    }
+    &__agreement {
+        color: $color-hover;
+        text-decoration: underline;
+    }
+    &__button-submit {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 52px;
+        font-family: $font-roboto;
+        color: $color-hero;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        letter-spacing: 0.06em;
+        line-height: 1.87;
+        background-color: $color-hover;
+        border-width: 0px ;
+        border-radius: 4px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+    &__button-submit:hover {
+        background: $color-active;
+    }
+}
